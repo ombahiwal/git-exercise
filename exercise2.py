@@ -13,6 +13,13 @@ class Point2D:
     @property
     def y(self) -> float:
         return self._coordinates[1]
+    
+    def __iadd__(self, vector: Vector) -> 'Point2D':
+        if len(vector) != 2:
+            assert True, "Vector must have exactly 2 dimensions to add to a 2D point."
+        self._coordinates[0] += vector[0]
+        self._coordinates[1] += vector[1]
+        return self
 
 
 def test_point_construction() -> None:
@@ -35,3 +42,5 @@ def test_point_vector_subtraction() -> None:
     point -= Vector([1.1, 2.2])
     assert isclose(point.x, -0.1)
     assert isclose(point.y, -0.2)
+
+test_point_vector_addition()
