@@ -56,5 +56,3 @@ def test_3d_vector_subtraction() -> None:
 
     assert all(result[i] == expected[i] for i in range(3)), f"Expected {expected}, but got {result}"
     
-
-test_3d_vector_subtraction()
