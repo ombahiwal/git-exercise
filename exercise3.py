@@ -24,7 +24,7 @@ class Rectangle:
     @property
     def upper_right(self) -> Point2D:
         return self.corner(3)
-    # Task A & B solution
+    # Task A solution with tolerance (Task B)
     def _is_within_interval(self, value: float, low: float, high: float, tolerance: float) -> bool:
         return (low -tolerance )<= value <= (high + tolerance)
 
